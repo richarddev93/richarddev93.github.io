@@ -1,3 +1,11 @@
+function prefixBaseUrl() {
+  let url = window.location.href || document.URL
+  if ((url || '').includes('loja.suvinil.com.br')) {
+    return 'loja-online'
+  }
+  return 'institucional'
+}
+
 (function (window,document){
             
   window.addEventListener('load', checkJSLoaded)
@@ -15,7 +23,7 @@
       menuClickEvent: () => {
         return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique",
           event_label: "explore-sua-opcoes",
         }},
@@ -23,7 +31,7 @@
       menuExpand: (type) => {
       return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "expandir",
           event_label: normalize(type),
       }},
@@ -31,7 +39,7 @@
       menuRetract: (type) => {
           return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "retrair",
           event_label: normalize(type),
           }},
@@ -39,7 +47,7 @@
       headerItemsClickEvent: (item) => {
         return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique",
           event_label: normalize(item),
         }},
@@ -47,7 +55,7 @@
       footerItemsCtaClick: (item) => {
       return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique",
           event_label: normalize(item),
       }},
@@ -55,7 +63,7 @@
       languageSelection: (language) => {
           return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique",
           event_label:  normalize(language),
           }},
@@ -63,7 +71,7 @@
       itemMenuAccessibilityClickEvent: (item, menu) => {
       return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique:"+ normalize(item),
           event_label: normalize(menu),
         }},
@@ -71,7 +79,7 @@
       colorsSlide: (item, name) => {
         return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique:ajustar-cor-" + normalize(item),
           event_label: normalize(name),
         }},
@@ -79,7 +87,7 @@
       fontSlide: (item, name) => {
         return {
           event: "interaction",
-          event_category: "institucional:acessibilidade",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
           event_action: "clique:ajustar-fonte-" + normalize(item),
           event_label: normalize(name),
         }},
@@ -341,4 +349,4 @@
     });
   }
 
-})(window,document)
+})(window,document);
