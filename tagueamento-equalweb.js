@@ -1,17 +1,12 @@
 function prefixBaseUrl() {
   let url = window.location.href || document.URL || ''
-
-  if (url.includes('loja.suvinil.com.br') || url.includes('loja.hml.suvinil.com.br')) {
-    return 'loja-online'
-  }
-  else if ((url.includes('suvinil.com.br/encontre-seu-pintor'))) {
-    return 'encontre-seu-pintor'
-  }
-  else if ((url.includes('glasu.com.br'))) {
-    return 'glasu'
-  }
+  let verifyBaseUrl = (key) => url.includes(key);
   
-  return 'institucional'
+  switch (true) {
+    case verifyBaseUrl('loja.suvinil.com.br') || verifyBaseUrl('loja.hml.suvinil.com.br'): return 'loja-online';         break;    
+    case verifyBaseUrl('suvinil.com.br/encontre-seu-pintor'):                             return 'encontre-seu-pintor'; break;
+    default: return 'institucional';
+  }
 }
 
 (function (window,document){
@@ -272,7 +267,8 @@ function prefixBaseUrl() {
       }
     
       //console.log(result)
-      dataLayer.push(result);
+      if (result)
+         dataLayer.push(result);
     } 
 
     var dispatcherEventInput = (cta,i) => {
