@@ -1,1 +1,357 @@
-function prefixBaseUrl(){let a=window.location.href||document.URL;return(a||"").includes("loja.suvinil.com.br")?"loja-online":"institucional"}(function(a,b){a.addEventListener("load",function(){var a=b.getElementById("INDmenu-btn");a.addEventListener("click",()=>{dataLayer.push(e.menuClickEvent()),setTimeout(l,3e3)})});var c=0;const d=a=>a.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(" ").join("-"),e={menuClickEvent:()=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique",event_label:"explore-sua-opcoes"}),menuExpand:a=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"expandir",event_label:d(a)}),menuRetract:a=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"retrair",event_label:d(a)}),headerItemsClickEvent:a=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique",event_label:d(a)}),footerItemsCtaClick:a=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique",event_label:d(a)}),languageSelection:a=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique",event_label:d(a)}),itemMenuAccessibilityClickEvent:(a,b)=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique:"+d(a),event_label:d(b)}),colorsSlide:(a,b)=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique:ajustar-cor-"+d(a),event_label:d(b)}),fontSlide:(a,b)=>({event:"interaction",event_category:`${prefixBaseUrl()}:acessibilidade`,event_action:"clique:ajustar-fonte-"+d(a),event_label:d(b)})};var f=a=>{var b=a.getAttribute("data-indopt"),c="true"===a.getAttribute("aria-expanded"),d=null;switch(b||(b=a.getAttribute("id")),b){case"IND_acc0_btn0":d=c?e.menuRetract("Ajuste de voz e navega\xE7\xE3o"):e.menuExpand("Ajuste de voz e navega\xE7\xE3o");break;case"IND_acc0_btn1":d=c?e.menuRetract("Ajuste de Cor"):e.menuExpand("Ajuste de Cor");break;case"IND_acc0_btn2":d=c?e.menuRetract("Ajuste de Conte\xFAdo"):e.menuExpand("Ajuste de Conte\xFAdo");break;case"a11yMode":d=e.headerItemsClickEvent("Accessibility Mode");break;case"expandMenu":d=e.headerItemsClickEvent("Expandir Menu Acessibilidade");break;case"hideButton":d=e.headerItemsClickEvent("Tempo para Ocultar");break;case"INDcloseAccMenu":d=e.headerItemsClickEvent("Fechar");break;case"feedback":d=e.footerItemsCtaClick("Enviar Feedback");break;case"statement":d=e.footerItemsCtaClick("Demonstrativo de Acessibilidade");break;case"switchoff":d=e.footerItemsCtaClick("Desligar");break;case"soundreder":d=e.itemMenuAccessibilityClickEvent("Ajuste de Leitor de Tela","Ajuste de voz e navega\xE7\xE3o");break;case"keyboard":d=e.itemMenuAccessibilityClickEvent("Navega\xE7\xE3o de Teclado","Ajuste de voz e navega\xE7\xE3o");break;case"smartnav":d=e.itemMenuAccessibilityClickEvent("Navega\xE7\xE3o Inteligente","Ajuste de voz e navega\xE7\xE3o");break;case"epilepsy":d=e.itemMenuAccessibilityClickEvent("Bloqueio de Intermit\xEAncia de Brilho","Ajuste de voz e navega\xE7\xE3o");break;case"textreader":d=e.itemMenuAccessibilityClickEvent("Leitor de texto","Ajuste de voz e navega\xE7\xE3o");break;case"monochrome":d=e.itemMenuAccessibilityClickEvent("Monocrom\xE1tico","Ajuste de Cor");break;case"blackwhite":d=e.itemMenuAccessibilityClickEvent("Alto Contraste Escuro","Ajuste de Cor");break;case"whiteblack":d=e.itemMenuAccessibilityClickEvent("Alto Contraste Claro","Ajuste de Cor");break;case"INDcolorReset":d=e.itemMenuAccessibilityClickEvent("Redefinir as Cores","Ajuste de Cor");break;case"fontsizedec":d=e.itemMenuAccessibilityClickEvent("Diminuir tamanho da Fonte","Ajuste de Conte\xFAdo");break;case"fontsizeinc":d=e.itemMenuAccessibilityClickEvent("Aumentar tamanho da Fonte","Ajuste de Conte\xFAdo");break;case"linesizedec":d=e.itemMenuAccessibilityClickEvent("Diminuir Espa\xE7amento entre Linhas","Ajuste de Conte\xFAdo");break;case"linesizeinc":d=e.itemMenuAccessibilityClickEvent("Aumentar Espa\xE7amento entre Linhas","Ajuste de Conte\xFAdo");break;case"wordsizedec":d=e.itemMenuAccessibilityClickEvent("Diminuir Espa\xE7amento entre Palavras","Ajuste de Conte\xFAdo");break;case"wordsizeinc":d=e.itemMenuAccessibilityClickEvent("Aumentar Espa\xE7amentos entre Palavras","Ajuste de Conte\xFAdo");break;case"blackcursor":d=e.itemMenuAccessibilityClickEvent("Cursor Preto","Ajuste de Conte\xFAdo");break;case"whitecursor":d=e.itemMenuAccessibilityClickEvent("Cursor Branco","Ajuste de Conte\xFAdo");break;case"magnifier":d=e.itemMenuAccessibilityClickEvent("Lupa","Ajuste de Conte\xFAdo");break;case"readablefont":d=e.itemMenuAccessibilityClickEvent("Fonte Leg\xEDvel","Ajuste de Conte\xFAdo");break;case"alttext":d=e.itemMenuAccessibilityClickEvent("Descri\xE7\xF5es de Imagem","Ajuste de Conte\xFAdo");break;case"links":d=e.itemMenuAccessibilityClickEvent("Destacar Links","Ajuste de Conte\xFAdo");break;case"headers":d=e.itemMenuAccessibilityClickEvent("Destacar Cabe\xE7alhos","Ajuste de Conte\xFAdo");break;case"readabilitymode":d=e.itemMenuAccessibilityClickEvent("Modo de Leitura","Ajuste de Conte\xFAdo");break;case"textmagnifier":d=e.itemMenuAccessibilityClickEvent("Ampliador de Texto","Ajuste de Conte\xFAdo");break;case"virtualKeyboard":d=e.itemMenuAccessibilityClickEvent("Teclado Virtual","Ajuste de Conte\xFAdo");break;default:d=null;}dataLayer.push(d)},g=(a,c)=>{for(var d=b.getElementById("INDcustomcolor-radioGroup"),f=d.getElementsByTagName("input"),g=d.getElementsByTagName("label"),c=0,h=f.length;c<h;c++)f[c].checked&&("INDchangeColor-background"===f[c].getAttribute("id")||"INDchangeColor-titles"===f[c].getAttribute("id")||"INDchangeColor-text"===f[c].getAttribute("id"))&&dataLayer.push(e.colorsSlide(g[c].innerHTML,"Ajuste de Cor"))},h=a=>{for(var b=0,c=a.length;b<c;b++)"https://www.equalweb.com.br/"===a[b].getAttribute("href")&&a[b].addEventListener("click",()=>dataLayer.push(e.footerItemsCtaClick("EqualWeb Brasil")))},i=a=>{for(var b=0,c=a.length;b<c;b++)a[b]&&a[b].addEventListener("click",function(b){f(a[b])}.bind(this,b))},j=a=>{for(var b=0,c=a.length;b<c;b++)"INDmenu-colorInput"===a[b].getAttribute("id")&&a[b].addEventListener("click",()=>g())},k=()=>{var a=b.getElementById("INDlangsCombo"),d=a.options[a.selectedIndex].text;dataLayer.push(e.languageSelection(d.replace(/[{()}]/g,""))),c=0,l()},l=function(){if(0==c){var a=b.getElementById("INDmenu"),d=a.getElementsByTagName("button"),e=a.getElementsByTagName("a"),f=b.getElementById("INDmenuGroup-customcolor"),g=b.getElementById("INDlangsCombo");if(g&&g.addEventListener("change",()=>setTimeout(k,2e3)),f){var l=f.getElementsByTagName("input");j(l)}h(e),i(d),c++}}})(window,document);
+function prefixBaseUrl() {
+  let url = window.location.href || document.URL || ''
+
+  let verifyBaseUrl = (key) => url.includes(key);
+  
+  switch (true) {
+    case verifyBaseUrl('loja.suvinil.com.br'):                return 'loja-online';         break;
+    case verifyBaseUrl('loja.hml.suvinil.com.br'):            return 'loja-online';         break;
+    case verifyBaseUrl('suvinil.com.br/encontre-seu-pintor'): return 'encontre-seu-pintor'; break;
+    default: return 'institucional';
+  }
+}
+
+(function (window,document){
+            
+  window.addEventListener('load', checkJSLoaded)
+  var countAddedEvents= 0;
+    const normalize = (string) => {
+      return string
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .split(" ")
+      .join("-");
+    };
+
+    const accessibility = {                  
+      menuClickEvent: () => {
+        return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique",
+          event_label: "explore-sua-opcoes",
+        }},
+        
+      menuExpand: (type) => {
+      return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "expandir",
+          event_label: normalize(type),
+      }},
+      
+      menuRetract: (type) => {
+          return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "retrair",
+          event_label: normalize(type),
+          }},
+            
+      headerItemsClickEvent: (item) => {
+        return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique",
+          event_label: normalize(item),
+        }},
+        
+      footerItemsCtaClick: (item) => {
+      return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique",
+          event_label: normalize(item),
+      }},
+          
+      languageSelection: (language) => {
+          return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique",
+          event_label:  normalize(language),
+          }},
+            
+      itemMenuAccessibilityClickEvent: (item, menu) => {
+      return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique:"+ normalize(item),
+          event_label: normalize(menu),
+        }},
+    
+      colorsSlide: (item, name) => {
+        return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique:ajustar-cor-" + normalize(item),
+          event_label: normalize(name),
+        }},
+    
+      fontSlide: (item, name) => {
+        return {
+          event: "interaction",
+          event_category: `${prefixBaseUrl()}:acessibilidade`,
+          event_action: "clique:ajustar-fonte-" + normalize(item),
+          event_label: normalize(name),
+        }},
+      
+    };
+
+    var switchEvents = (cta) => {
+
+      var type = cta.getAttribute('data-indopt');
+      var expanded = 'true' === cta.getAttribute('aria-expanded');
+      var result = null;
+      
+      if ( !type ) {
+        type = cta.getAttribute('id')
+      } 
+
+      switch (type) {
+        
+        case 'IND_acc0_btn0':                      
+          if (expanded){
+            result = accessibility.menuRetract('Ajuste de voz e navegação');
+          }else {
+            result = accessibility.menuExpand('Ajuste de voz e navegação');
+          }
+          break;
+          
+          case 'IND_acc0_btn1':                        
+          if (expanded){
+            result = accessibility.menuRetract('Ajuste de Cor');
+          }else {
+            result = accessibility.menuExpand('Ajuste de Cor');
+          }
+          break;
+
+        case 'IND_acc0_btn2':
+          if (expanded){
+            result = accessibility.menuRetract('Ajuste de Conteúdo');
+          }else {
+            result = accessibility.menuExpand('Ajuste de Conteúdo');
+          }  
+          break;
+
+        case 'a11yMode':
+          result = accessibility.headerItemsClickEvent('Accessibility Mode');
+          break;
+          
+        case 'expandMenu':
+          result = accessibility.headerItemsClickEvent('Expandir Menu Acessibilidade');
+          break;
+  
+        case 'hideButton':
+          result = accessibility.headerItemsClickEvent('Tempo para Ocultar');
+          break;     
+  
+        case 'INDcloseAccMenu':
+          result = accessibility.headerItemsClickEvent('Fechar');
+          break;
+      
+        case 'feedback':
+          result = accessibility.footerItemsCtaClick('Enviar Feedback');
+          break;
+      
+        case 'statement':
+          result = accessibility.footerItemsCtaClick('Demonstrativo de Acessibilidade');
+          break;
+      
+        case 'switchoff':
+          result = accessibility.footerItemsCtaClick('Desligar');
+          break;
+
+        case 'soundreder':
+          result = accessibility.itemMenuAccessibilityClickEvent('Ajuste de Leitor de Tela','Ajuste de voz e navegação');
+          break;
+
+        case 'keyboard':
+          result = accessibility.itemMenuAccessibilityClickEvent('Navegação de Teclado','Ajuste de voz e navegação');
+          break;
+      
+        case 'smartnav':
+          result = accessibility.itemMenuAccessibilityClickEvent('Navegação Inteligente','Ajuste de voz e navegação');
+          break;
+      
+        case 'epilepsy':
+          result = accessibility.itemMenuAccessibilityClickEvent('Bloqueio de Intermitência de Brilho','Ajuste de voz e navegação');
+          break;
+      
+        case 'textreader':
+          result = accessibility.itemMenuAccessibilityClickEvent('Leitor de texto','Ajuste de voz e navegação');
+          break;
+      
+        case 'monochrome':
+          result = accessibility.itemMenuAccessibilityClickEvent('Monocromático','Ajuste de Cor');
+          break;
+
+        case 'blackwhite':
+          result = accessibility.itemMenuAccessibilityClickEvent('Alto Contraste Escuro','Ajuste de Cor');
+          break;
+
+        case 'whiteblack':
+          result = accessibility.itemMenuAccessibilityClickEvent('Alto Contraste Claro','Ajuste de Cor');
+          break;
+
+        case 'INDcolorReset':
+          result = accessibility.itemMenuAccessibilityClickEvent('Redefinir as Cores','Ajuste de Cor');
+          break;
+
+        case 'fontsizedec':
+          result = accessibility.itemMenuAccessibilityClickEvent('Diminuir tamanho da Fonte','Ajuste de Conteúdo');
+          break;
+
+        case 'fontsizeinc':
+          result = accessibility.itemMenuAccessibilityClickEvent('Aumentar tamanho da Fonte','Ajuste de Conteúdo');
+          break;
+
+        case 'linesizedec':
+          result = accessibility.itemMenuAccessibilityClickEvent('Diminuir Espaçamento entre Linhas','Ajuste de Conteúdo');
+          break;
+
+        case 'linesizeinc':
+          result = accessibility.itemMenuAccessibilityClickEvent('Aumentar Espaçamento entre Linhas','Ajuste de Conteúdo');
+          break;
+          
+        case 'wordsizedec':
+          result = accessibility.itemMenuAccessibilityClickEvent('Diminuir Espaçamento entre Palavras','Ajuste de Conteúdo');
+          break;
+
+        case 'wordsizeinc':
+          result = accessibility.itemMenuAccessibilityClickEvent('Aumentar Espaçamentos entre Palavras','Ajuste de Conteúdo');
+          break;
+
+        case 'blackcursor':
+          result = accessibility.itemMenuAccessibilityClickEvent('Cursor Preto','Ajuste de Conteúdo');
+          break;
+
+        case 'whitecursor':
+          result = accessibility.itemMenuAccessibilityClickEvent('Cursor Branco','Ajuste de Conteúdo');
+          break;
+
+        case 'magnifier':
+          result = accessibility.itemMenuAccessibilityClickEvent('Lupa','Ajuste de Conteúdo');
+          break;
+          
+        case 'readablefont':
+          result = accessibility.itemMenuAccessibilityClickEvent('Fonte Legível','Ajuste de Conteúdo');
+          break;
+
+        case 'alttext':
+          result = accessibility.itemMenuAccessibilityClickEvent('Descrições de Imagem','Ajuste de Conteúdo');
+          break;
+
+        case 'links':
+          result = accessibility.itemMenuAccessibilityClickEvent('Destacar Links','Ajuste de Conteúdo');
+          break;
+
+        case 'headers':
+          result = accessibility.itemMenuAccessibilityClickEvent('Destacar Cabeçalhos','Ajuste de Conteúdo');
+          break;
+
+        case 'readabilitymode':
+          result = accessibility.itemMenuAccessibilityClickEvent('Modo de Leitura','Ajuste de Conteúdo');
+          break;
+
+        case 'textmagnifier':
+          result = accessibility.itemMenuAccessibilityClickEvent('Ampliador de Texto','Ajuste de Conteúdo');
+          break;
+
+        case 'virtualKeyboard':
+          result = accessibility.itemMenuAccessibilityClickEvent('Teclado Virtual','Ajuste de Conteúdo');
+          break;
+      
+        default:
+            result = null;
+          break;
+      }
+    
+      //console.log(result)
+      dataLayer.push(result);
+    } 
+
+    var dispatcherEventInput = (cta,i) => {
+
+      var wrapRadioGroup = document.getElementById('INDcustomcolor-radioGroup');  
+      var inputs = wrapRadioGroup.getElementsByTagName('input');
+      var labels = wrapRadioGroup.getElementsByTagName('label');    
+      
+      for(var i=0,n=inputs.length;i<n;i++){
+        if ( inputs[i].checked  && ( inputs[i].getAttribute('id') === 'INDchangeColor-background' || inputs[i].getAttribute('id') === 'INDchangeColor-titles' || inputs[i].getAttribute('id') ===  'INDchangeColor-text' )) {
+            dataLayer.push( accessibility.colorsSlide(labels[i].innerHTML,'Ajuste de Cor') );
+        }                        
+      }                         
+    }
+
+    var handleAnchors = (anchors)=> {
+      for(var i=0,n=anchors.length;i<n;i++){
+          if(anchors[i].getAttribute('href') === 'https://www.equalweb.com.br/'){
+            anchors[i].addEventListener('click', () => dataLayer.push(accessibility.footerItemsCtaClick('EqualWeb Brasil') ));
+          }
+      }
+    }
+
+    var handleButtons = (buttons)=> {
+      for(var i=0,n=buttons.length;i<n;i++){
+        if(buttons[i]){
+          buttons[i].addEventListener('click',function(iBindededValue){
+            switchEvents(buttons[iBindededValue]);
+          }.bind(this,i))
+        }
+      }
+    }
+    var handleInputs = (inputs)=> {                
+      for(var i=0,n=inputs.length;i<n;i++){
+        if (inputs[i].getAttribute('id') === "INDmenu-colorInput"){
+          inputs[i].addEventListener('click', () => dispatcherEventInput());
+        }
+      }
+    }
+
+    var handleSelect = () => {
+      var select= document.getElementById('INDlangsCombo');
+      var value = select.options[select.selectedIndex].text;
+      dataLayer.push(accessibility.languageSelection(value.replace(/[{()}]/g, '')));
+      countAddedEvents = 0;
+      addEvents();                
+    }
+
+    var addEvents = function(){
+
+      if (countAddedEvents == 0){
+        var wrapperEqualWeb=document.getElementById('INDmenu');  
+        var buttons = wrapperEqualWeb.getElementsByTagName('button');
+        var anchors = wrapperEqualWeb.getElementsByTagName('a');
+        var wrapRadioGroup = document.getElementById('INDmenuGroup-customcolor');  
+        var selectLanguage = document.getElementById('INDlangsCombo');
+
+        if (selectLanguage) {                    
+          selectLanguage.addEventListener('change', ()=> setTimeout(handleSelect,2000));
+        }
+        
+        if (wrapRadioGroup) {
+          var inputs = wrapRadioGroup.getElementsByTagName('input');
+          handleInputs(inputs);
+        }
+
+        handleAnchors(anchors);
+
+        handleButtons(buttons);
+
+        countAddedEvents++;
+
+      }
+
+    }
+  
+  function checkJSLoaded (){        
+    var btnAccessibility=document.getElementById('INDmenu-btn');
+    btnAccessibility.addEventListener('click', () => {
+      dataLayer.push(accessibility.menuClickEvent());
+      setTimeout(addEvents,3000)
+    });
+  }
+
+})(window,document);
