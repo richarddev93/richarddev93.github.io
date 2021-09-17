@@ -1,8 +1,16 @@
 function prefixBaseUrl() {
-  let url = window.location.href || document.URL
-  if ((url || '').includes('loja.suvinil.com.br')) {
+  let url = window.location.href || document.URL || ''
+
+  if (url.includes('loja.suvinil.com.br') || url.includes('loja.hml.suvinil.com.br')) {
     return 'loja-online'
   }
+  else if ((url.includes('suvinil.com.br/encontre-seu-pintor'))) {
+    return 'encontre-seu-pintor'
+  }
+  else if ((url.includes('glasu.com.br'))) {
+    return 'glasu'
+  }
+  
   return 'institucional'
 }
 
