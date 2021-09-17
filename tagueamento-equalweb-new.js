@@ -1,9 +1,10 @@
 function prefixBaseUrl() {
   let url = window.location.href || document.URL || ''
-
+  console.log(url);
   let verifyBaseUrl = (key) => url.includes(key);
   
   switch (true) {
+    case verifyBaseUrl('localhost'):                          return 'loja-online';         break;
     case verifyBaseUrl('loja.suvinil.com.br'):                return 'loja-online';         break;
     case verifyBaseUrl('loja.hml.suvinil.com.br'):            return 'loja-online';         break;
     case verifyBaseUrl('suvinil.com.br/encontre-seu-pintor'): return 'encontre-seu-pintor'; break;
@@ -269,7 +270,8 @@ function prefixBaseUrl() {
       }
     
       //console.log(result)
-      dataLayer.push(result);
+      if (result)
+         dataLayer.push(result);
     } 
 
     var dispatcherEventInput = (cta,i) => {
