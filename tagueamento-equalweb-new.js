@@ -266,9 +266,8 @@ function prefixBaseUrl() {
           break;
       }
     
-      //console.log(result)
       if (result)
-         dataLayer.push(result);
+         console.log(result);
     } 
 
     var dispatcherEventInput = (cta,i) => {
@@ -279,7 +278,7 @@ function prefixBaseUrl() {
       
       for(var i=0,n=inputs.length;i<n;i++){
         if ( inputs[i].checked  && ( inputs[i].getAttribute('id') === 'INDchangeColor-background' || inputs[i].getAttribute('id') === 'INDchangeColor-titles' || inputs[i].getAttribute('id') ===  'INDchangeColor-text' )) {
-            dataLayer.push( accessibility.colorsSlide(labels[i].innerHTML,'Ajuste de Cor') );
+            console.log( accessibility.colorsSlide(labels[i].innerHTML,'Ajuste de Cor') );
         }                        
       }                         
     }
@@ -287,7 +286,7 @@ function prefixBaseUrl() {
     var handleAnchors = (anchors)=> {
       for(var i=0,n=anchors.length;i<n;i++){
           if(anchors[i].getAttribute('href') === 'https://www.equalweb.com.br/'){
-            anchors[i].addEventListener('click', () => dataLayer.push(accessibility.footerItemsCtaClick('EqualWeb Brasil') ));
+            anchors[i].addEventListener('click', () => console.log(accessibility.footerItemsCtaClick('EqualWeb Brasil') ));
           }
       }
     }
@@ -312,7 +311,7 @@ function prefixBaseUrl() {
     var handleSelect = () => {
       var select= document.getElementById('INDlangsCombo');
       var value = select.options[select.selectedIndex].text;
-      dataLayer.push(accessibility.languageSelection(value.replace(/[{()}]/g, '')));
+      console.log(accessibility.languageSelection(value.replace(/[{()}]/g, '')));
       countAddedEvents = 0;
       addEvents();                
     }
@@ -348,7 +347,7 @@ function prefixBaseUrl() {
   function checkJSLoaded (){        
     var btnAccessibility=document.getElementById('INDmenu-btn');
     btnAccessibility.addEventListener('click', () => {
-      dataLayer.push(accessibility.menuClickEvent());
+      console.log(accessibility.menuClickEvent());
       setTimeout(addEvents,3000)
     });
   }
