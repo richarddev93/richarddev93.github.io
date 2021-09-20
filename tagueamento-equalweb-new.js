@@ -284,7 +284,7 @@ function prefixBaseUrl() {
         }
 
         if (result)
-            console.log(result);
+            dataLayer.push(result);
     }
 
     var dispatcherEventInput = (cta, i) => {
@@ -295,7 +295,7 @@ function prefixBaseUrl() {
 
         for (var i = 0, n = inputs.length; i < n; i++) {
             if (inputs[i].checked && (inputs[i].getAttribute('id') === 'INDchangeColor-background' || inputs[i].getAttribute('id') === 'INDchangeColor-titles' || inputs[i].getAttribute('id') === 'INDchangeColor-text')) {
-                console.log(accessibility.colorsSlide(labels[i].innerHTML, 'Ajuste de Cor'));
+                dataLayer.push(accessibility.colorsSlide(labels[i].innerHTML, 'Ajuste de Cor'));
             }
         }
     }
@@ -303,7 +303,7 @@ function prefixBaseUrl() {
     var handleAnchors = (anchors) => {
         for (var i = 0, n = anchors.length; i < n; i++) {
             if (anchors[i].getAttribute('href') === 'https://www.equalweb.com.br/') {
-                anchors[i].addEventListener('click', () => console.log(accessibility.footerItemsCtaClick('EqualWeb Brasil')));
+                anchors[i].addEventListener('click', () => dataLayer.push(accessibility.footerItemsCtaClick('EqualWeb Brasil')));
             }
         }
     }
@@ -335,7 +335,7 @@ function prefixBaseUrl() {
     var handleSelect = () => {
         var select = document.getElementById('INDlangsCombo');
         var value = select.options[select.selectedIndex].text;
-        console.log(accessibility.languageSelection(value.replace(/[{()}]/g, '')));
+        dataLayer.push(accessibility.languageSelection(value.replace(/[{()}]/g, '')));
         countAddedEvents = 0;
         addEvents();
     }
@@ -372,7 +372,7 @@ function prefixBaseUrl() {
     function checkJSLoaded() {
         var btnAccessibility = document.getElementById('INDmenu-btn');
         btnAccessibility.addEventListener('click', () => {
-            console.log(accessibility.menuClickEvent());
+            dataLayer.push(accessibility.menuClickEvent());
             setTimeout(addEvents, 3000)
         });
     }
