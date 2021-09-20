@@ -129,15 +129,22 @@ function prefixBaseUrl() {
                     case '1':
                         if (expanded) {
                             result = accessibility.menuRetract('Ajuste de Cor');
+                            cta.setAttribute('expanded', false);
+
                         } else {
                             result = accessibility.menuExpand('Ajuste de Cor');
+                            cta.setAttribute('expanded', true);
                         }
                         break;
                     case '2':
                         if (expanded) {
                             result = accessibility.menuRetract('Ajuste de Conteúdo');
+                            cta.setAttribute('expanded', false);
+
                         } else {
                             result = accessibility.menuExpand('Ajuste de Conteúdo');
+                            cta.setAttribute('expanded', true);
+
                         }
                         break;
                 }
