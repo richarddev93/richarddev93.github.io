@@ -149,6 +149,34 @@ function prefixBaseUrl() {
                         break;
                 }
                 break
+                
+            case 'IND_acc0_btn0':
+                  var expanded = 'true' === cta.getAttribute('aria-expanded');
+
+                  if (expanded){
+                    result = accessibility.menuRetract('Ajuste de voz e navegação');
+                  }else {
+                    result = accessibility.menuExpand('Ajuste de voz e navegação');
+                  }
+                  break;
+          
+            case 'IND_acc0_btn1':   
+                  var expanded = 'true' === cta.getAttribute('aria-expanded');
+                  if (expanded){
+                    result = accessibility.menuRetract('Ajuste de Cor');
+                  }else {
+                    result = accessibility.menuExpand('Ajuste de Cor');
+                  }
+                  break;
+
+            case 'IND_acc0_btn2':
+                  var expanded = 'true' === cta.getAttribute('aria-expanded');
+                  if (expanded){
+                    result = accessibility.menuRetract('Ajuste de Conteúdo');
+                  }else {
+                    result = accessibility.menuExpand('Ajuste de Conteúdo');
+                  }  
+                  break;    
 
             case 'a11yMode':
                 result = accessibility.headerItemsClickEvent('Accessibility Mode');
